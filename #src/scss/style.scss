@@ -1,0 +1,364 @@
+@import 'fonts';
+
+// Usual
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+  position: relative;
+  color: #2f3035;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// GLOBAL
+
+.fContainer {
+  padding: 0 4rem;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+// MENU
+
+.menu {
+  position: fixed;
+  right: 0%;
+  top: 0px;
+  background-color: rgba($color: #000, $alpha: 0.97);
+  transition: all 0.5s ease;
+  border-radius: 50%;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(0%, -100%);
+
+  &--active {
+    border-radius: 0%;
+    transform: translateX(0%);
+  }
+
+  .menu__wrapper {
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu__title {
+    color: #fff;
+    font-size: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    margin-bottom: 30px;
+  }
+
+  .menu__form {
+    display: flex;
+    max-width: 450px;
+    margin-bottom: 30px;
+  }
+
+  .menu__form-input {
+    flex: 1;
+    height: 45px;
+    border: none;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    color: #2f3035;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  }
+
+  .menu__form-submit {
+    margin-left: 10px;
+    border: none;
+    background-color: rgb(0, 194, 69);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    padding: 10px 25px;
+    cursor: pointer;
+    font-size: 15px;
+  }
+
+  .menu__text {
+    max-width: 450px;
+    color: rgba($color: #ffff, $alpha: 0.8);
+  }
+
+  .menu__link {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 24px;
+    position: relative;
+    font-weight: 300;
+
+    &:hover {
+      &::before {
+        content: '';
+        width: 0%;
+        left: auto;
+        right: 0;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-color: #fff;
+      bottom: -4px;
+      left: 0;
+      transition: width 1s ease;
+    }
+  }
+}
+
+// HEADER
+
+.header {
+  background-color: #000;
+
+  .header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0 0 0;
+  }
+
+  .header__logo {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 5px;
+    font-size: 22px;
+    color: #fff;
+  }
+
+  .header__menu {
+    background-color: transparent;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: fixed;
+    cursor: pointer;
+    outline-width: 0;
+    right: 4rem;
+    z-index: 10;
+
+    &--n {
+      .menu__line {
+        &--top {
+          top: 50%;
+          transform: translate(-50%, -50%) rotate(225deg);
+        }
+
+        &--center {
+          transform: translate(-100%, 0);
+          opacity: 0;
+        }
+
+        &--bottom {
+          transform: translate(-50%, 50%) rotate(-225deg);
+          bottom: 50%;
+        }
+      }
+    }
+  }
+
+  .menu__line {
+    width: 50%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: all 0.6s ease;
+    border-radius: 5px;
+
+    &--top {
+      top: 16px;
+    }
+
+    &--center {
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &--bottom {
+      bottom: 16px;
+    }
+  }
+}
+
+// MAIN PAGE
+
+.main__page {
+  position: relative;
+  background-color: #000;
+
+  .main__page-wrapper {
+    display: flex;
+    justify-content: space-between;
+    height: calc(60vh - 54px);
+    align-items: center;
+    min-height: 450px;
+    max-height: 600px;
+  }
+
+  .main__page-name {
+    font-size: 100px;
+    line-height: 120px;
+    max-width: 600px;
+    margin-bottom: 50px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-weight: 100;
+  }
+
+  .main__page-pos {
+    color: #fff;
+    font-weight: 100;
+  }
+
+  .main__page-imgWrapper {
+    width: 40%;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    img {
+      margin-left: -1050px;
+      object-fit: cover;
+    }
+  }
+}
+
+// WORKS
+
+.works {
+  padding-top: 100px;
+  background-color: #f9f9f9;
+
+  .works__title {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 200;
+    margin-bottom: 100px;
+    font-size: 30px;
+    color: #000;
+  }
+
+  .works__wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .work__item {
+    width: 48%;
+    margin-bottom: 30px;
+    border-radius: 15px;
+
+    img {
+      width: 100%;
+      border-radius: 5px;
+    }
+  }
+
+  .work__item-footer {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+  }
+
+  .work__item-gitHub {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 30px;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .work__item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .work__item-site {
+    transition: all 0.5s ease;
+    border-radius: 5px;
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+  }
+
+  .work__item-title {
+    color: #777;
+    font-weight: 300;
+  }
+}
+
+@import 'media';
