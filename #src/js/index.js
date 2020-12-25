@@ -4,16 +4,35 @@ import webp from './modules/webp';
 window.addEventListener('DOMContentLoaded', () => {
   webp();
 
-  function headerMenu(btnClass, menuClass, btnActiveClass, menuActiveClass) {
+  const tl1 = gsap.timeline({ defaults: { ease: 'power1.out' } });
+
+  tl1.to('.menu', { y: '0%', borderRadius: '0px', duration: 0.2 });
+  tl1.fromTo('.menu__title', { y: '-50%', opacity: 0 }, {
+    y: '0%', opacity: 1, duration: 0.5, delay: 0.2,
+  });
+  tl1.fromTo('.menu__form-input', { y: '-50%', opacity: 0 }, {
+    y: '0%', opacity: 1, duration: 0.5,
+  }, '-=0.4');
+  tl1.fromTo('.menu__form-submit', { y: '-50%', opacity: 0 }, {
+    y: '0%', opacity: 1, duration: 0.5,
+  }, '-=0.5');
+  tl1.fromTo('.menu__text', { y: '-50%', opacity: 0 }, {
+    y: '0%', opacity: 1, duration: 0.5,
+  }, '-=0.4');
+  tl1.fromTo('.menu__link', { y: '-10%', opacity: 0 }, {
+    y: '0%', opacity: 1, duration: 0.3, stagger: 0.1,
+  }, '-=0.5');
+  tl1.reverse();
+
+  function headerMenu(btnClass, btnActiveClass) {
     const btn = document.querySelector(btnClass);
-    const menu = document.querySelector(menuClass);
 
     btn.addEventListener('click', () => {
       btn.classList.toggle(btnActiveClass);
-      menu.classList.toggle(menuActiveClass);
+      tl1.reversed(!tl1.reversed());
     });
   }
-  headerMenu('.header__menu', '.menu', 'header__menu--active', 'menu--active');
+  headerMenu('.header__menu', 'header__menu--active');
 
   const header = document.querySelector('.header');
   const mainPage = document.querySelector('.main__page');
@@ -28,7 +47,7 @@ window.addEventListener('DOMContentLoaded', () => {
   });
   const tl = gsap.timeline({ defaults: { ease: 'power1.out' } });
   tl.fromTo('.header__logo', {
-    top: '50vh', left: '50vw', x: '-100%', y: '-50%', width: '225px', height: '220px',
+    top: '50vh', left: '50vw', x: '-50%', y: '-50%', width: '225px', height: '220px',
   }, {
     top: '50vh', left: '50vw', x: '-50%', y: '-50%', width: '225px', height: '220px',
   });
@@ -45,6 +64,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }, '-=1.3');
   tl.to('.header__logo-letterN', { margin: '0', duration: 1.3 }, '-=1.3');
   tl.to('.header__logo-letterY', { marginLeft: '-22px', duration: 1.3 }, '-=1.3');
-  tl.to('.animBg', { opacity: 0, duration: 1 });
-  tl.to('.animBg', { y: '-100%' });
+  tl.to('.animBg', { opacity: 0, duration: 0.5 });
+  tl.to('.animBg', { y: '-100%' }, '-=0.3');
 });

@@ -113,13 +113,19 @@ li {
           align-items: center;
 }
 
+.menu .menu__title-wrapper {
+  overflow: hidden;
+}
+
 .menu .menu__title {
   color: #fff;
   font-size: 40px;
-  line-height: 40px;
-  overflow: hidden;
   margin-bottom: 30px;
   line-height: 50px;
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
+  opacity: 0;
 }
 
 .menu .menu__form {
@@ -128,6 +134,7 @@ li {
   display: flex;
   max-width: 450px;
   margin-bottom: 30px;
+  overflow: hidden;
 }
 
 .menu .menu__form-input {
@@ -140,13 +147,14 @@ li {
   border-radius: 5px;
   padding: 10px;
   color: #2f3035;
+  font-size: 18px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
 .menu .menu__form-submit {
   margin-left: 10px;
   border: none;
-  background-color: #00c245;
+  background-color: #777;
   color: #fff;
   padding: 10px;
   border-radius: 5px;
@@ -158,6 +166,14 @@ li {
 .menu .menu__text {
   max-width: 450px;
   color: rgba(255, 255, 255, 0.8);
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
+  opacity: 0;
+}
+
+.menu .menu__link-wrapper {
+  overflow: hidden;
 }
 
 .menu .menu__link {
@@ -166,6 +182,7 @@ li {
   font-size: 24px;
   position: relative;
   font-weight: 300;
+  opacity: 0;
 }
 
 .menu .menu__link:hover::before {
@@ -367,9 +384,9 @@ li {
   -webkit-transform: translate(-50%, 0);
       -ms-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
-  -webkit-transition: all 0.6s ease;
-  -o-transition: all 0.6s ease;
-  transition: all 0.6s ease;
+  -webkit-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
+  transition: all 0.8s ease;
   border-radius: 5px;
 }
 
