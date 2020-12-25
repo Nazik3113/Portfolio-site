@@ -6,22 +6,22 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const tl1 = gsap.timeline({ defaults: { ease: 'power1.out' } });
 
-  tl1.to('.menu', { y: '0%', borderRadius: '0px', duration: 0.2 });
-  tl1.fromTo('.menu__title', { y: '-50%', opacity: 0 }, {
-    y: '0%', opacity: 1, duration: 0.5, delay: 0.2,
+  tl1.to('.menu', { y: '0%', duration: 0.1 });
+  tl1.fromTo('.menu__title', { y: '-20%', opacity: 0 }, {
+    y: '0%', opacity: 1, duration: 0.2, delay: 0.2,
   });
-  tl1.fromTo('.menu__form-input', { y: '-50%', opacity: 0 }, {
-    y: '0%', opacity: 1, duration: 0.5,
-  }, '-=0.4');
-  tl1.fromTo('.menu__form-submit', { y: '-50%', opacity: 0 }, {
-    y: '0%', opacity: 1, duration: 0.5,
-  }, '-=0.5');
-  tl1.fromTo('.menu__text', { y: '-50%', opacity: 0 }, {
-    y: '0%', opacity: 1, duration: 0.5,
-  }, '-=0.4');
-  tl1.fromTo('.menu__link', { y: '-10%', opacity: 0 }, {
-    y: '0%', opacity: 1, duration: 0.3, stagger: 0.1,
-  }, '-=0.5');
+  tl1.fromTo('.menu__form-input', { y: '-20%', opacity: 0 }, {
+    y: '0%', opacity: 1, duration: 0.2,
+  }, '-=0.2');
+  tl1.fromTo('.menu__form-submit', { y: '-20%', opacity: 0 }, {
+    y: '0%', opacity: 1, duration: 0.2,
+  }, '-=0.2');
+  tl1.fromTo('.menu__text', { y: '-20%', opacity: 0 }, {
+    y: '0%', opacity: 1, duration: 0.2,
+  }, '-=0.2');
+  tl1.fromTo('.menu__link', { y: '-20%', opacity: 0 }, {
+    y: '0%', opacity: 1, duration: 0.2, stagger: 0.05,
+  }, '-=0.2');
   tl1.reverse();
 
   function headerMenu(btnClass, btnActiveClass) {
