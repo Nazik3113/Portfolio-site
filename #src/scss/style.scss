@@ -93,7 +93,7 @@ li {
   }
 
   .menu__wrapper {
-    width: 1000px;
+    width: 70vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -136,7 +136,6 @@ li {
     border: none;
     background-color: #777;
     color: #fff;
-    padding: 10px;
     border-radius: 5px;
     padding: 10px 25px;
     cursor: pointer;
@@ -661,6 +660,12 @@ li {
   .footer__link {
     width: 30px;
     height: 30px;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+    }
 
     & + .footer__link {
       margin-left: 5px;

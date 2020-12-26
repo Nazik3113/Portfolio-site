@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   tl1.to('.menu', { y: '0%', duration: 0.1 });
   tl1.fromTo('.menu__title', { y: '-20%', opacity: 0 }, {
-    y: '0%', opacity: 1, duration: 0.2, delay: 0.2,
+    y: '0%', opacity: 1, duration: 0.2, delay: 0.3,
   });
   tl1.fromTo('.menu__form-input', { y: '-20%', opacity: 0 }, {
     y: '0%', opacity: 1, duration: 0.2,
@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const headerHide = document.querySelector('.header__hide');
   window.addEventListener('scroll', () => {
     const scrollPoint = header.offsetHeight + mainPage.offsetHeight;
-    if (window.scrollY > scrollPoint - 50) {
+    if (window.scrollY > scrollPoint - 50 && window.innerWidth > 700) {
       headerHide.classList.add('header__hide--visible');
     } else {
       headerHide.classList.remove('header__hide--visible');
@@ -56,14 +56,24 @@ window.addEventListener('DOMContentLoaded', () => {
   tl.fromTo('.header__logo-letter', { y: '100%', opacity: 0, fontSize: '130px' }, {
     y: '0%', opacity: 1, fontSize: '130px', duration: 1,
   });
-  tl.to('.header__logo', {
-    top: '20px', left: '4rem', x: '0%', y: '0%', width: '50px', height: '44px', duration: 1.3,
-  });
+  if (window.innerWidth > 740) {
+    tl.to('.header__logo', {
+      top: '20px', left: '4rem', x: '0%', y: '0%', width: '50px', height: '44px', duration: 1.3,
+    });
+  } else if (window.innerWidth > 374) {
+    tl.to('.header__logo', {
+      top: '20px', left: '1rem', x: '0%', y: '0%', width: '50px', height: '44px', duration: 1.3,
+    });
+  } else {
+    tl.to('.header__logo', {
+      top: '10px', left: '1rem', x: '0%', y: '0%', width: '50px', height: '44px', duration: 1.3,
+    });
+  }
   tl.fromTo('.header__logo-letter', { fontSize: '130px' }, {
     fontSize: '26px', duration: 1.3,
   }, '-=1.3');
   tl.to('.header__logo-letterN', { margin: '0', duration: 1.3 }, '-=1.3');
   tl.to('.header__logo-letterY', { marginLeft: '-22px', duration: 1.3 }, '-=1.3');
   tl.to('.animBg', { opacity: 0, duration: 0.5 });
-  tl.to('.animBg', { y: '-100%' }, '-=0.3');
+  tl.to('.animBg', { display: 'none' }, '-=0.3');
 });
