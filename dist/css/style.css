@@ -100,6 +100,7 @@ li {
 }
 
 .menu .menu__wrapper {
+  max-width: 1010px;
   width: 70vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -695,6 +696,7 @@ li {
 
 .message .message__form-input:focus {
   border-bottom: 5px solid #000;
+  outline-width: 0;
 }
 
 .message .message__form-input::-webkit-input-placeholder {

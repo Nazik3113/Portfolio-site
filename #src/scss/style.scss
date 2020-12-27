@@ -93,6 +93,7 @@ li {
   }
 
   .menu__wrapper {
+    max-width: 1010px;
     width: 70vw;
     display: flex;
     justify-content: space-between;
@@ -582,6 +583,7 @@ li {
 
     &:focus {
       border-bottom: 5px solid #000;
+      outline-width: 0;
     }
 
     &::placeholder {
