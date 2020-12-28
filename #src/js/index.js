@@ -76,7 +76,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
   const headerHide = document.querySelector('.header__hide');
   window.addEventListener('scroll', () => {
     const scrollPoint = header.offsetHeight + mainPage.offsetHeight;
-    if (window.scrollY > scrollPoint - 50 && window.innerWidth > 700) {
+    if (window.scrollY > scrollPoint - 64 && window.innerWidth > 700) {
       headerHide.classList.add('header__hide--visible');
     } else {
       headerHide.classList.remove('header__hide--visible');
