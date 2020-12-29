@@ -5,6 +5,35 @@ window.addEventListener('DOMContentLoaded', (e) => {
   e.preventDefault();
   webp();
 
+  function openModal(btnClass) {
+    const btn = document.querySelector(btnClass);
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelector('.modal').classList.add('modal--active');
+      document.querySelector('.modalbg').classList.add('modalbg--active');
+    });
+  }
+  openModal('.menu__form-submit');
+  openModal('.message__form-submit');
+
+  function closeModal(btnClass, bgClass) {
+    const btn = document.querySelector(btnClass);
+    const bg = document.querySelector(bgClass);
+
+    btn.addEventListener('click', (event) => {
+      event.preventDefault();
+      document.querySelector('.modal').classList.remove('modal--active');
+      document.querySelector('.modalbg').classList.remove('modalbg--active');
+    });
+    bg.addEventListener('click', (event) => {
+      event.preventDefault();
+      document.querySelector('.modal').classList.remove('modal--active');
+      document.querySelector('.modalbg').classList.remove('modalbg--active');
+    });
+  }
+  closeModal('.modal__close', '.modalbg');
+
   const tl1 = gsap.timeline({defaults: {ease: 'power1.out'}});
 
   tl1.to('.menu', {y: '0%', duration: 0.1});

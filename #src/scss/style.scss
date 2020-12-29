@@ -71,6 +71,105 @@ li {
   color: #000;
 }
 
+// modalbg
+
+.modalbg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  z-index: 110;
+  display: none;
+
+  &--active {
+    display: block;
+  }
+}
+
+// MODAL
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 120;
+  background-color: #fff;
+  color: #000;
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  width: 800px;
+  display: none;
+
+  &--active {
+    display: block;
+  }
+
+  .modal__circle {
+    width: 100px;
+    height: 100px;
+    background-color: #777;
+    position: relative;
+    top: 40px;
+    left: 40px;
+    border-radius: 50%;
+  }
+
+  .modal__title {
+    font-weight: 200;
+    position: absolute;
+    top: 65px;
+    left: 70px;
+    font-size: 35px;
+    text-transform: uppercase;
+  }
+
+  .modal__close {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50px;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
+
+  .modal__close-line {
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transition: all 0.5s ease;
+
+    &:first-child {
+      transform: translateY(19px) rotate(-45deg);
+    }
+
+    &:last-child {
+      transform: translateY(-19px) rotate(45deg);
+    }
+  }
+
+  .modal__text {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 50px 20px 40px 20px;
+    font-size: 35px;
+    line-height: 35px;
+  }
+}
+
 // MENU
 
 .menu {
@@ -625,14 +724,11 @@ li {
     &:hover {
       color: #fff;
       background-color: #000;
+      border-bottom: none;
+    }
 
-      &:hover {
-        border-bottom: none;
-      }
-
-      &:focus {
-        border-bottom: none;
-      }
+    &:focus {
+      border-bottom: none;
     }
   }
 }

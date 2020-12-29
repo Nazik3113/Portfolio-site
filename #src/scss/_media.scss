@@ -48,6 +48,10 @@
     width: 98%;
     margin: 0 auto 20px auto;
   }
+
+  .modal {
+    width: 90vw;
+  }
 }
 
 @media (max-width: 840px) {
@@ -91,6 +95,23 @@
 
   .header__logo {
     left: 1rem;
+  }
+
+  .modal .modal__text {
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  .modal .modal__circle {
+    left: 15px;
+  }
+
+  .modal .modal__title {
+    left: 45px;
+  }
+
+  .modal .modal__close {
+    top: 60px;
   }
 }
 
